@@ -1,4 +1,4 @@
-﻿namespace threadRace
+namespace threadRace
 {
     internal class Program
     {
@@ -38,7 +38,7 @@
                 for (int i = 0; i < 100; i++)
                 {
                     if (t1Location < 100 && t2Location < 100 && t3Location < 100 && t4Location < 100 && t5Location < 100)
-                        MoveIt(ref t2Location);
+                        MoveIt(ref t3Location);
 
                 }
             });
@@ -48,7 +48,7 @@
                 for (int i = 0; i < 100; i++)
                 {
                     if (t1Location < 100 && t2Location < 100 && t3Location < 100 && t4Location < 100 && t5Location < 100)
-                        MoveIt(ref t2Location);
+                        MoveIt(ref t4Location);
 
                 }
             });
@@ -58,10 +58,11 @@
                 for (int i = 0; i < 100; i++)
                 {
                     if (t1Location < 100 && t2Location < 100 && t3Location < 100 && t4Location < 100 && t5Location < 100)
-                        MoveIt(ref t2Location);
+                        MoveIt(ref t5Location);
 
                 }
             });
+            t3.Priority = ThreadPriority.AboveNormal;
 
             //Executing the methods
             t1.Start();
@@ -85,3 +86,4 @@
 
     }
 }
+
